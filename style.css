@@ -1,0 +1,97 @@
+/* Layout y grid */
+/* Comentario: Contenedor central con ancho cómodo */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* Comentario: Grid responsivo para tarjetas de la galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+/* Comentario: Imágenes fluidas con bordes suaves */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* assets/css/styles.css */
+/* Comentario: Paleta Dragon Ball con variables reutilizables */
+:root {
+  --color-bg: #0b0f19;         /* Fondo oscuro para resaltar imágenes */
+  --color-surface: #11151f;    /* Superficie para tarjetas */
+  --color-primary: #ff7f11;    /* Naranja (Gi de Goku) */
+  --color-secondary: #1e90ff;  /* Azul (Capsule Corp / Blue) */
+  --color-accent: #19c37d;     /* Verde (Shenlong) */
+  --color-ssj: #f2c744;        /* Dorado (Super Saiyajin) */
+  --color-text: #e6edf3;       /* Texto claro */
+  --color-muted: #8b9bb0;      /* Detalles */
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Comentario: Header con gradiente naranja-dorado para energía y identidad */
+.header {
+  background: linear-gradient(120deg, rgba(255, 127, 17, 0.25), rgba(242, 199, 68, 0.2));
+  border-bottom: 1px solid rgba(230, 237, 243, 0.08);
+}
+
+/* Comentario: Banner con radial azul/verde evocando aura y Shenlong */
+.banner {
+  background: radial-gradient(circle at center, rgba(30, 144, 255, 0.25), rgba(25, 195, 125, 0.15) 60%, rgba(11, 15, 25, 0.7) 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Comentario: Hero con imagen de fondo (por ejemplo, Shenlong) bien ajustada */
+.hero {
+  background-image: url("../img/shenlong.jpg");
+  background-size: cover;       /* Cubre sin deformar */
+  background-position: center;  /* Enmarca el motivo principal */
+  background-repeat: no-repeat; /* Sin mosaicos */
+  min-height: 48vh;
+  position: relative;
+}
+/* Comentario: Overlay para mejorar contraste del texto sobre fondos con imagen */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.45);
+}
+
+/* Comentario: Tarjetas con fondo semitransparente para separar del fondo */
+.card {
+  background: rgba(17, 21, 31, 0.6);
+  border: 1px solid rgba(230, 237, 243, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: saturate(110%) blur(2px);
+}
+.card__title { color: var(--color-primary); }
+.card__desc { color: var(--color-muted); }
+
+/* Comentario: Enlaces y botones con buen contraste y estados visibles */
+a, .btn {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+a:hover, .btn:hover {
+  color: #156bd1; /* Azul más profundo en hover */
+}
+
+/* Comentario: Títulos con acento dorado para toque SSJ */
+h1, h2 {
+  color: var(--color-ssj);
+}
